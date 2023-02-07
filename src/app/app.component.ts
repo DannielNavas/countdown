@@ -10,7 +10,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
   public dateNow = new Date();
-  public dDay = new Date('Feb 13 2023 12:30:11');
+  public dDay = new Date('Feb 8 2023 00:00:00');
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
   minutesInAnHour = 60;
@@ -49,6 +49,9 @@ export class AppComponent implements OnInit, OnDestroy {
           this.SecondsInAMinute *
           this.hoursInADay)
     );
+
+    this.hoursToDday += this.daysToDday * 24;
+    console.log(this.hoursToDday);
   }
 
   ngOnInit() {
